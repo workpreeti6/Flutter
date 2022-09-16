@@ -1,0 +1,197 @@
+import 'package:flutter/material.dart';
+import 'package:justus_admin/Common/custom_surfix_icon.dart';
+import 'package:justus_admin/Common/default_button.dart';
+import 'package:justus_admin/Common/form_error.dart';
+import 'package:justus_admin/Common/size_config.dart';
+import 'package:justus_admin/Common/constants.dart';
+// import 'package:shop_app/screens/otp/otp_screen.dart';
+
+class CompleteProfileForm extends StatefulWidget {
+  @override
+  _CompleteProfileFormState createState() => _CompleteProfileFormState();
+}
+
+class _CompleteProfileFormState extends State<CompleteProfileForm> {
+  final _formKey = GlobalKey<FormState>();
+  final List<String?> errors = [];
+  String? firstName;
+  String? lastName;
+  String? phoneNumber;
+
+  void addError({String? error}) {
+    if (!errors.contains(error))
+      setState(() {
+        errors.add(error);
+      });
+  }
+
+  void removeError({String? error}) {
+    if (errors.contains(error))
+      setState(() {
+        errors.remove(error);
+      });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          buildFirstNameFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildLastNameFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildPhoneNumberFormField(),
+          FormError(errors: errors),
+          SizedBox(height: getProportionateScreenHeight(40)),
+          DefaultButton(
+            text: "Continue",
+            press: () {
+              // if (_formKey.currentState!.validate()) {
+              Navigator.pop(context);
+              Navigator.pop(context);
+              // }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  // TextFormField buildAddressFormField() {
+  //   return TextFormField(
+  //     onSaved: (newValue) => address = newValue,
+  //     onChanged: (value) {
+  //       if (value.isNotEmpty) {
+  //         removeError(error: kAddressNullError);
+  //       }
+  //       return null;
+  //     },
+  //     validator: (value) {
+  //       if (value!.isEmpty) {
+  //         addError(error: kAddressNullError);
+  //         return "";
+  //       }
+  //       return null;
+  //     },
+  //     decoration: InputDecoration(
+  //       labelText: "Address",
+  //       hintText: "Enter your phone address",
+  //       // If  you are using latest version of flutter then lable text and hint text shown like this
+  //       // if you r using flutter less then 1.20.* then maybe this is not working properly
+  //       floatingLabelBehavior: FloatingLabelBehavior.always,
+  //       suffixIcon:
+  //           CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
+  //     ),
+  //   );
+  // }
+
+  TextFormField buildPhoneNumberFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.phone,
+      onSaved: (newValue) => phoneNumber = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kPhoneNumberNullError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kPhoneNumberNullError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelStyle: TextStyle(color: Colors.black),
+        labelText: "Phone Number",
+        hintText: "Enter your phone number",
+        contentPadding: EdgeInsets.symmetric(horizontal: 36, vertical: 20),
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Phone.svg"),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide(color: Colors.black),
+          gapPadding: 10,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          // borderSide: BorderSide(color: kTextColor),
+          gapPadding: 10,
+        ),
+      ),
+      cursorColor: Colors.black,
+    );
+  }
+
+  TextFormField buildLastNameFormField() {
+    return TextFormField(
+      onSaved: (newValue) => lastName = newValue,
+      decoration: InputDecoration(
+        labelStyle: TextStyle(color: Colors.black),
+        labelText: "Last Name",
+        hintText: "Enter your last name",
+        contentPadding: EdgeInsets.symmetric(horizontal: 36, vertical: 20),
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide(color: Colors.black),
+          gapPadding: 10,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          // borderSide: BorderSide(color: kTextColor),
+          gapPadding: 10,
+        ),
+      ),
+      cursorColor: Colors.black,
+    );
+  }
+
+  TextFormField buildFirstNameFormField() {
+    return TextFormField(
+      onSaved: (newValue) => firstName = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kNamelNullError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kNamelNullError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelStyle: TextStyle(color: Colors.black),
+        labelText: "First Name",
+        hintText: "Enter your first name",
+        contentPadding: EdgeInsets.symmetric(horizontal: 36, vertical: 20),
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide(color: Colors.black),
+          gapPadding: 10,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          // borderSide: BorderSide(color: kTextColor),
+          gapPadding: 10,
+        ),
+      ),
+      cursorColor: Colors.black,
+    );
+  }
+}
