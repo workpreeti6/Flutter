@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/login.dart';
 import 'package:login_app/register.dart';
+import 'package:login_app/dashboard.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -8,7 +9,8 @@ void main() {
     initialRoute: 'login',
     routes: {
       'login':(context)=> MyLogin(),
-      'register':(context) =>Registration()
+      'register':(context) =>Registration(),
+      'dashboard':(context) => Dashboard()
     },
   ));
 }

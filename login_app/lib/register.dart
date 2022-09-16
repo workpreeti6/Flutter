@@ -125,7 +125,7 @@ class _RegistrationState extends State<Registration> {
                           child: IconButton(
                             color: Colors.white,
                             onPressed: () {
-                             // Navigator.pushNamed(context, '')
+                              Navigator.pushNamed(context, 'dashboard');
                             },
                             icon: Icon(Icons.login),
 
