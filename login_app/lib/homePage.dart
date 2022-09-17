@@ -9,36 +9,38 @@ class HomePage extends StatelessWidget {
     'Deep Cleaning Services',
     'Office Cleaning Services',
     'Window Cleaning Services',
-    'Post construction Cleaning Services'
-        'Wall Painting Services',
-    'Move In/Out Services'
+    'Post construction Cleaning Services',
+    'Wall Painting Services',
+    'Move In/Out Services',
+    'Move In/Out Services',
   ];
 
   var images = [
-    'assets/broom.png',
+    'assets/sofa.png',
     'assets/broom.png',
     'assets/cleaner.png',
-    'assets/house.png',
     'assets/office.png',
-    'assets/paint_roller.png',
+    'assets/window.png',
     'assets/vaccume.png',
-    'assets/window.png'
+    'assets/paint_roller.png',
+    'assets/move.png',
+    'assets/window.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        //itemCount: images.length,
+        itemCount: (images.length - 1),
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
           return Card(
             child: Column(children: [
               SizedBox(height: 20),
-              Image.asset('assets/paint_roller.png', height: 50, width: 50),
+              Image.asset(images[index], height: 50, width: 50),
               Padding(
                   padding: EdgeInsets.all(20),
-                  child: Text('Servies',
+                  child: Text(services[index],
                       style: TextStyle(
                           fontSize: 16,
                           height: 1.2,
