@@ -31,7 +31,7 @@ class Routes {
         myaccount: (context) => SettingsUI(),
         setting: (context) => SettingsPage(),
         washing: (context) => Washing(),
-        login: (context) => LoginPage(),
+        login: (context) => MyLogin(),
         register: (context) => RegisterPage(),
         completeProfile: (context) => CompleteProfileScreen(),
 

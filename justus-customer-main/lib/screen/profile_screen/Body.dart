@@ -65,10 +65,10 @@ class profile_menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: FlatButton(
-        padding: EdgeInsets.all(20),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        color: AppColor.lightBlue,
+      child: TextButton(
+        //padding: EdgeInsets.all(20),
+        //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        //color: AppColor.lightBlue,
         onPressed: press,
         child: Row(
           children: [

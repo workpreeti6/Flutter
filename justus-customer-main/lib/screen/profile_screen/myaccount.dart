@@ -122,13 +122,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   //           letterSpacing: 2.2,
                   //           color: Colors.black)),
                   // ),
-                  RaisedButton(
+
+                  ElevatedButton(
                     onPressed: () {},
-                    color: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                    //color: Colors.white,
+                    //padding: EdgeInsets.symmetric(horizontal: 50),
+                    //elevation: 2,
+                    //shape: RoundedRectangleBorder(
+                     //   borderRadius: BorderRadius.circular(20)),
                     child: Text(
                       "CANCEL",
                       style: TextStyle(
@@ -137,13 +138,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () {},
-                    color: AppColor.blue,
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                    //color: AppColor.blue,
+                    //padding: EdgeInsets.symmetric(horizontal: 50),
+                    //elevation: 2,
+                    //shape: RoundedRectangleBorder(
+                     //   borderRadius: BorderRadius.circular(20)),
                     child: Text(
                       "SAVE",
                       style: TextStyle(

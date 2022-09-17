@@ -77,10 +77,10 @@ class DetailScBody extends StatelessWidget {
                             SizedBox(
                                 height: 50,
                                 width: 250,
-                                child: FlatButton(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18)),
-                                  color: AppColor.blue,
+                                child: TextButton(
+                                  //shape: RoundedRectangleBorder(
+                                   //   borderRadius: BorderRadius.circular(18)),
+                                  //color: AppColor.blue,
                                   onPressed: () {},
                                   child: Text(
                                     "Book Now".toUpperCase(),
